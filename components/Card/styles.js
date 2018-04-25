@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 8,
     marginBottom: 32,
+    transform: [{ translateY: 1 }],
   },
   imageWrapper: {
     borderRadius: 8,
@@ -29,8 +30,8 @@ const styles = StyleSheet.create({
     ...human.headlineObject,
   },
   titleWrapper: {
-    marginBottom: 16,
-    maxHeight: 48,
+    marginBottom: 8,
+    height: 48,
     overflow: 'hidden',
   },
   description: {

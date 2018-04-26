@@ -22,8 +22,6 @@ class Collections extends Component {
         contentContainerStyle={styles.contentContainerStyle}
       >
         <Header text="Collections" />
-        <Card image={MOCK_IMAGE} tags={MOCK_TAGS} title={MOCK_TITLE} />
-        <Card image={MOCK_IMAGE} tags={MOCK_TAGS} title={MOCK_TITLE} />
       </ScrollView>
     );
   }

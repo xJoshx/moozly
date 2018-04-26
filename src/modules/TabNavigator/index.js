@@ -1,6 +1,7 @@
 // You can import Ionicons from @expo/vector-icons if you use Expo or
 // react-native-vector-icons/Ionicons otherwise.
-import { MaterialCommunityIcons as Icon } from 'react-native-vector-icons/MaterialCommunityIcons';
+import React from 'react';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 import Feed from '../Feed';
 import Profile from '../Profile';
@@ -23,7 +24,9 @@ export default TabNavigator(
 
         // You can return any component that you like here! We usually use an
         // icon component from react-native-vector-icons
-        return <Icon name={iconName} size={25} color={tintColor} />;
+        return (
+          <MaterialCommunityIcons name={iconName} size={25} color={tintColor} />
+        );
       },
     }),
     tabBarOptions: {

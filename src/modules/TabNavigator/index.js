@@ -5,33 +5,46 @@ import { iOSColors } from 'react-native-typography';
 
 import Feed from '../Feed';
 import Profile from '../Profile';
+import Collections from '../Collections';
+import Search from '../Search';
 
 export default TabNavigator(
   {
     Home: { screen: Feed },
+    Collections: { screen: Collections },
     Settings: { screen: Profile },
+    Search: { screen: Search },
   },
   {
     navigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, tintColor }) => {
         const { routeName } = navigation.state;
-        let iconName;
+        let iconName,
+          size = 25;
         if (routeName === 'Home') {
-          iconName = `home${focused ? '' : '-outline'}`;
+          iconName = `home`;
+        } else if (routeName === 'Collections') {
+          iconName = `book-multiple`;
+          size = 20;
         } else if (routeName === 'Settings') {
-          iconName = `account${focused ? '' : '-outline'}`;
+          iconName = `account`;
+          size = 28;
+        } else if (routeName === 'Search') {
+          iconName = `magnify`;
         }
 
-        // You can return any component that you like here! We usually use an
-        // icon component from react-native-vector-icons
         return (
-          <MaterialCommunityIcons name={iconName} size={25} color={tintColor} />
+          <MaterialCommunityIcons
+            name={iconName}
+            size={size}
+            color={tintColor}
+          />
         );
       },
     }),
     tabBarOptions: {
       activeTintColor: iOSColors.purple,
-      inactiveTintColor: iOSColors.gray,
+      inactiveTintColor: iOSColors.black,
       showLabel: false,
     },
     tabBarComponent: TabBarBottom,

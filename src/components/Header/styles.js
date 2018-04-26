@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   titleWrapper: {
     marginBottom: 16,
     overflow: 'hidden',
-    width: '90%',
+    width: '80%',
   },
 });
 

@@ -10,13 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import { Tags, Tag } from '../Tags';
 import styles from './styles';
-
-// .activities-list-item:active {
-//   transform: translateY(6px);
-//   cursor: pointer;
-//   box-shadow: 0 1px 10px 4px rgba(151, 151, 151, 0.6) !important;
-//   transition: translateY 0.6s ease-in;
-// }
+import { timeout } from 'rxjs/operator/timeout';
 
 const CardImage = ({ styles, image }) => (
   <View style={styles.imageWrapper}>
@@ -57,6 +51,10 @@ class Card extends Component {
     this.state.animatedShadow.shadowRadius.setValue(8);
   };
 
+  _resetAnimationValuesWithDelay = delay => {
+    setTimeout(() => this._resetAnimationValues(), delay);
+  };
+
   _animatedPress(valueTo = 6) {
     const duration = 333;
     const easeOutBack = Easing.bezier(0.175, 0.885, 0.32, 1.275);
@@ -78,7 +76,7 @@ class Card extends Component {
         duration: duration,
         easing: Easing.linear,
       }),
-    ]).start();
+    ]).start(this._resetAnimationValuesWithDelay(1000));
   }
 
   render() {

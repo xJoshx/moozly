@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
-import { Text, ScrollView, Image, View } from 'react-native';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import { Text, ScrollView, Image, View } from 'react-native'
+import PropTypes from 'prop-types'
 
-import Card from '../../components/Card';
-import Header from '../../components/Header';
-import styles from './styles';
+import Collection from '@components/Collection'
+import Header from '../../components/Header'
+import styles from './styles'
 
-const MOCK_IMAGE = require('../../images/img1.jpg'),
+const MOCK_IMAGE = require('../../images/designbetter.jpg'),
   MOCK_TAGS = [
     { text: 'design' },
     { text: 'illustration' },
-    { text: 'tutorial' },
+    { text: 'tutorial' }
   ],
-  MOCK_TITLE = 'Whatever the hell that fits two rows asdfadsf ';
+  MOCK_TITLE = 'Whatever the hell that fits two rows asdfadsf '
 
 class Collections extends Component {
-  render() {
+  render () {
     return (
       <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainerStyle}
       >
-        <Header text="Collections" />
+        <Header text='Collections' />
+        <Collection image={MOCK_IMAGE} />
       </ScrollView>
-    );
+    )
   }
 }
 
-Collections.propTypes = {};
+Collections.propTypes = {}
 
-export default Collections;
+export default Collections

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Text, ScrollView, Image, View } from 'react-native'
 import PropTypes from 'prop-types'
 
-import Collection from '@components/Collection'
+import Collection from '../../components/Collection'
 import Header from '../../components/Header'
 import styles from './styles'
 

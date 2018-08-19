@@ -28,6 +28,13 @@ class Collections extends Component {
           renderItem={({ item }) => <Collection image={MOCK_IMAGE} />}
           style={styles.list}
         />
+        <Header text='All' />
+        <FlatList
+          data={[{ key: 'a' }, { key: 'b' }, { key: 'c' }, { key: 'd' }]}
+          renderItem={({ item }) => <Collection isGrid image={MOCK_IMAGE} />}
+          numColumns={2}
+          horizontal={false}
+        />
       </ScrollView>
     )
   }

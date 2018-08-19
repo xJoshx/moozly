@@ -10,6 +10,12 @@ const CollectionImage = ({ styles, image }) => (
   </View>
 )
 
+const CollectionGridImage = ({ styles, image }) => (
+  <View style={styles.imageGridWrapper}>
+    <Image style={styles.imageGrid} source={image} />
+  </View>
+)
+
 class Collection extends Component {
   state = {}
 
@@ -23,7 +29,9 @@ class Collection extends Component {
         onPress={() => this._animatedPress()}
       >
         <Animated.View style={animatedStyles}>
-          <CollectionImage styles={styles} image={this.props.image} />
+          {this.props.isGrid
+            ? <CollectionGridImage styles={styles} image={this.props.image} />
+            : <CollectionImage styles={styles} image={this.props.image} />}
         </Animated.View>
       </TouchableOpacity>
     )
@@ -31,7 +39,8 @@ class Collection extends Component {
 }
 
 Collection.propTypes = {
-  image: PropTypes.number
+  image: PropTypes.number,
+  isGrid: PropTypes.bool
 }
 
 export default Collection

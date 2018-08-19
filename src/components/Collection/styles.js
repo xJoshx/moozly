@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 8,
     marginBottom: 32,
+    marginRight: 16,
+    marginTop: 8,
     transform: [{ translateY: 1 }],
     alignContent: 'center',
     justifyContent: 'center'

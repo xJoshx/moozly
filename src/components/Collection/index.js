@@ -24,7 +24,6 @@ class Collection extends Component {
       >
         <Animated.View style={animatedStyles}>
           <CollectionImage styles={styles} image={this.props.image} />
-          <Text>{`Polla`}</Text>
         </Animated.View>
       </TouchableOpacity>
     )

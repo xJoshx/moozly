@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, ScrollView, Image, View } from 'react-native'
+import { Text, ScrollView, Image, View, FlatList } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Collection from '../../components/Collection'
@@ -21,8 +21,13 @@ class Collections extends Component {
         style={styles.container}
         contentContainerStyle={styles.contentContainerStyle}
       >
-        <Header text='Collections' />
-        <Collection image={MOCK_IMAGE} />
+        <Header text='Favorites' />
+        <FlatList
+          horizontal
+          data={[{ key: 'a' }, { key: 'b' }]}
+          renderItem={({ item }) => <Collection image={MOCK_IMAGE} />}
+          style={styles.list}
+        />
       </ScrollView>
     )
   }

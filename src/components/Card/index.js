@@ -97,7 +97,10 @@ class Card extends Component {
     return (
       <TouchableOpacity
         activeOpacity={0.9}
-        onPress={() => this._animatedPress()}
+        onPress={() => {
+          this._animatedPress()
+          this.props.onPress()
+        }}
       >
         <Animated.View style={animatedStyles}>
           <CardImage styles={styles} image={image} />

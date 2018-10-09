@@ -9,11 +9,10 @@ class Article extends Component {
 
   render () {
     return (
-      <View style={{ marginTop: 20, flex: 1 }}>
-        <Text>{'Go back'}</Text>
+      <View style={{ flex: 1 }}>
         <WebView
           source={{ uri: 'https://github.com/facebook/react-native' }}
-          style={{ marginTop: 20, flex: 1 }}
+          style={{ flex: 1 }}
           automaticallyAdjustContentInsets
         />
       </View>

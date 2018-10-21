@@ -14,7 +14,7 @@ import { timeout } from 'rxjs/operator/timeout'
 
 const CardImage = ({ styles, image }) => (
   <View style={styles.imageWrapper}>
-    <Image style={styles.image} source={image} />
+    <Image style={styles.image} source={{ uri: image }} />
   </View>
 )
 
@@ -27,7 +27,7 @@ const CardTitle = ({ styles, title }) => (
 const CardDescription = ({ styles, title, tags }) => (
   <View style={styles.description}>
     <CardTitle styles={styles} title={title} />
-    <Tags>{tags.map((tag, index) => <Tag key={index} text={tag.text} />)}</Tags>
+    <Tags>{tags.map((tag, index) => <Tag key={index} text={tag} />)}</Tags>
   </View>
 )
 
@@ -114,7 +114,7 @@ class Card extends Component {
 Card.propTypes = {
   title: PropTypes.string,
   tags: PropTypes.array,
-  image: PropTypes.number
+  image: PropTypes.string
 }
 
 export default Card

@@ -8,10 +8,11 @@ class Article extends Component {
   state = {}
 
   render () {
+    const link = this.props.navigation.getParam('link', 'Peter')
     return (
       <View style={{ flex: 1 }}>
         <WebView
-          source={{ uri: 'https://github.com/facebook/react-native' }}
+          source={{ uri: link }}
           style={{ flex: 1 }}
           automaticallyAdjustContentInsets
         />
